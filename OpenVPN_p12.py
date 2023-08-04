@@ -9,7 +9,7 @@ def connect():
     pin = pin_entry.get()
 
     # Run OpenVPN connection command with login, password, and pin
-    subprocess.Popen(['openvpn', '--config', config_path.get(), '--auth-user-pass', 'credentials.txt', '--pkcs12', cert_path.get(), '--askpass', 'passphrase.txt'])
+    subprocess.Popen(['sudo', 'openvpn', '--config', config_path.get(), '--auth-user-pass', 'credentials.txt', '--pkcs12', cert_path.get(), '--askpass', 'passphrase.txt'])
 
     # Create a temporary credentials file
     with open('credentials.txt', 'w') as file:
